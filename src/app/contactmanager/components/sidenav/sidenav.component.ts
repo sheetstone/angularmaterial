@@ -17,6 +17,8 @@ export class SidenavComponent implements OnInit {
   private mediaMatcher: MediaQueryList = window.matchMedia(`(max-width: ${SMALL_WIDTH_BREAKPOINT}px)`);
 
   users: Observable<User[]>;
+  isDarkTheme: Boolean = false;
+  dir = 'ltr';
 
   constructor(
     zone: NgZone,
@@ -48,5 +50,12 @@ export class SidenavComponent implements OnInit {
   isScreenSmall(): boolean {
     // console.log(this.mediaMatcher.matches);
     return this.mediaMatcher.matches;
+  }
+  toggleTheme() {
+    this.isDarkTheme = !this.isDarkTheme;
+  }
+  toggleDir() {
+    this.dir = (this.dir === 'ltr') ? 'rtl' : 'ltr';
+    console.log(this.dir);
   }
 }
