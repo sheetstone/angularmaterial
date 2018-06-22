@@ -1,0 +1,8 @@
+.addcontactform {
+  display: flex;
+  flex-direction: column;
+}
+
+.addcontactform > * {
+  width: 100%;
+}

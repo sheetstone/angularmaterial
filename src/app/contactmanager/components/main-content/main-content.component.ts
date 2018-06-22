@@ -21,6 +21,7 @@ export class MainContentComponent implements OnInit {
       // console.log('params:' + params['id']);
       let id: number = Number(params['id']);
       if (!id) { id = 1; }
+
       this.user = null;
 
       this.service.users.subscribe(users => {
